@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabrielle García | Curandera & Ancestral Medicines</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-sage: #ACC4A1;
+            --color-olive: #828C56;
+            --color-rose: #E6B5B3;
+            --color-white: #FFFFFF;
+            --color-charcoal: #333333;
+            --color-bg: #FAFAF7;
+            
+            --font-heading: 'Pacifico', cursive;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --header-height: 80px;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-charcoal);
+            background-color: var(--color-bg);
+            line-height: 1.8;
+            font-weight: 300;
+            padding-top: var(--header-height);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        .font-mystical {
+            font-family: var(--font-heading);
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        /* Typography Utilities */
+        .text-center { text-align: center; }
+        .text-sage { color: var(--color-sage); }
+        .text-olive { color: var(--color-olive); }
+        .text-rose { color: var(--color-rose); }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-olive);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-charcoal);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Layout Utilities */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .bg-sage-light {
+            background-color: rgba(172, 196, 161, 0.15);
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            z-index: 300;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-olive);
+            line-height: 1;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .header .btn-cta {
+            flex-shrink: 0;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-sage);
+        }
+
+        .btn-cta {
+            display: inline-block;
+            background-color: var(--color-olive);
+            color: var(--color-white);
+            padding: 0.8rem 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--color-sage);
+            color: var(--color-white);
+            transform: translateY(-2px);
+        }
+
+        .btn-cta-alt {
+            background-color: var(--color-white);
+            color: var(--color-olive);
+        }
+
+        .btn-cta-alt:hover {
+            background-color: var(--color-sage);
+            color: var(--color-white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: calc(100vh - var(--header-height));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(51,51,51,0.5), rgba(130,140,86,0.7));
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--color-white);
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero .one-liner {
+            font-size: 1.8rem;
+            color: var(--color-rose);
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+        }
+
+        .hero .translation {
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* About Section */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .philosophy-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+
+        .philosophy-image-wrapper {
+            position: relative;
+        }
+
+        .philosophy-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--color-sage);
+            z-index: -1;
+        }
+
+        /* Offerings Section */
+        .offerings-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .offering-card {
+            flex: 1 1 320px;
+            max-width: 450px;
+            background-color: var(--color-white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            z-index: 10;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .offering-img-container {
+            width: 100%;
+            height: 250px;
+        }
+
+        .offering-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .offering-card--portrait .offering-img-container {
+            height: auto;
+            aspect-ratio: 3 / 4;
+        }
+
+        .offering-card--portrait .offering-img-container img {
+            object-fit: contain;
+        }
+
+        .offering-content {
+            padding: 2.5rem 2rem;
+        }
+
+        .offering-content h3 {
+            color: var(--color-olive);
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .offering-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .offering-list li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .offering-list li::before {
+            content: '·';
+            position: absolute;
+            left: 0;
+            color: var(--color-sage);
+            font-size: 2rem;
+            line-height: 0.8;
+            top: 2px;
+        }
+        
+        .offering-list li em {
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Values Banner Section */
+        .values-section {
+            position: relative;
+            color: var(--color-white);
+            text-align: center;
+            padding: 8rem 5%;
+        }
+
+        .values-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(51, 51, 51, 0.7);
+            z-index: 1;
+        }
+
+        .values-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Gallery / Moments Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 3rem 1rem 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: var(--color-white);
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-align: center;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
+
+        /* The Path & Practices Section */
+        .practices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .practice-card {
+            background-color: var(--color-white);
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .practice-card h3 {
+            color: var(--color-olive);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(130, 140, 86, 0.2);
+            padding-bottom: 1rem;
+        }
+
+        .practice-quote {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(230, 181, 179, 0.5);
+            font-style: italic;
+            color: var(--color-charcoal);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            background-color: var(--color-rose);
+            color: var(--color-charcoal);
+            text-align: center;
+            padding: 5rem 5%;
+        }
+
+        .quote-mark {
+            font-family: var(--font-heading);
+            font-size: 5rem;
+            color: var(--color-white);
+            line-height: 1;
+            margin-bottom: -1rem;
+            opacity: 0.5;
+        }
+
+        .testimonial-text {
+            font-size: 1.6rem;
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            font-weight: 400;
+        }
+
+        .testimonial-author {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            color: var(--color-olive);
+        }
+
+        /* Walk the Path Together (Contact) */
+        .contact-section {
+            background-color: var(--color-olive);
+            color: var(--color-white);
+            text-align: center;
+            padding: 7rem 5%;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-charcoal);
+            color: var(--color-white);
+            text-align: center;
+            padding: 4rem 5%;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-sage);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .header-content {
+                gap: 1rem;
+                padding-left: 2.5%;
+                padding-right: 2.5%;
+            }
+            .logo {
+                font-size: 1.45rem;
+            }
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-links a {
+                font-size: 0.78rem;
+                letter-spacing: 0.7px;
+            }
+            .header .btn-cta {
+                font-size: 0.75rem;
+                padding: 0.7rem 1rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+            .philosophy-image-wrapper {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 0.75rem;
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+            .nav-links {
+                display: none;
+            }
+            .header .btn-cta {
+                font-size: 0.7rem;
+                padding: 0.55rem 0.8rem;
+            }
+            .logo {
+                font-size: 1.25rem;
+            }
+            .hero h1 {
+                font-size: 3.2rem;
+            }
+            .hero .one-liner {
+                font-size: 1.4rem;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                gap: 0.5rem;
+            }
+            .logo {
+                font-size: 1.05rem;
+            }
+            .header .btn-cta {
+                font-size: 0.62rem;
+                letter-spacing: 0.7px;
+                padding: 0.5rem 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#home" class="logo">Gabrielle García</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#offerings">Offerings</a></li>
+                    <li><a href="#moments">Moments</a></li>
+                    <li><a href="#path">The Path</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/529848077454" target="_blank" class="btn-cta">Message on WhatsApp</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" data-alt="Abstract ethereal background featuring soft, hazy gradients of sage green, dusty rose, and warm sunlight filtering through an unseen botanical canopy. The texture is smooth and dreamlike, with gentle organic curves and no sharp edges. The atmosphere evokes botanical minimalism, holistic serenity, and quiet introspection, reflecting the grounding essence of ancestral feminine wisdom. Warm ambient lighting creates gentle shadows that fade into a soothing mist. No text, signage, or lettering." style="background-image: url('resources/b1-R0dFFo1_dvnCqiwr4mk'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <h1 class="font-mystical">Gabrielle García</h1>
+            <p class="one-liner font-mystical">Curandera · Facilitator of Ancestral Medicines</p>
+            <p class="translation">Mujer de camino y de fuego — woman of the path and of fire</p>
+            <p style="font-size: 1.15rem; max-width: 700px; margin: 0 auto; line-height: 1.9; font-weight: 400;">I walk between the visible and the invisible, with my feet firmly on the earth and my heart open to the mystery. I hold spaces where transformation can be felt — and sustained. I am here to remember, together with you, that the path has always led inward.</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div class="philosophy-text">
+                    <h2 class="section-title">About Gabrielle</h2>
+                    <p>I am a therapist and facilitator of ancestral medicines — Kambo, Bufo, Rapé and Sananga, among others. I guide women's circles, temazcal sweat lodges and cacao circles; I am a fire keeper, and I offer in-person and online workshops on self-knowledge and spirituality, as well as retreats that open consciousness.</p>
+                    <p>My calling is the transmission of ancestral knowledge and the accompaniment of personal and spiritual development. My specialty is group facilitation and leadership — holding many hearts in one circle. I am in constant change: I love learning everything that serves the awakening of consciousness and planetary service.</p>
+                    <p>I have also served as a volunteer and therapist in environmental conservation, animal rescue, community aid and children's workshops — and I share the Saint Germain meditations with my community, online and in person.</p>
+                    <p class="text-olive" style="font-weight: 500; margin-top: 2rem; letter-spacing: 1px; line-height: 1.8;">Fire Keeper · Ancestral Medicines · Women's Circles · Temazcal · Cacao Ceremony · Retreats</p>
+                </div>
+                <div class="philosophy-image-wrapper">
+                    <img src="resources/bKmno_JDp9o52Jvwkznkfe" alt="Gabrielle García sitting outdoors working on a craft">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Section -->
+    <section id="offerings" class="section bg-sage-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Offerings</h2>
+                <p class="section-subtitle"><em>Each encounter is a sacred act, a concrete practice of life: to breathe better, to feel with clarity, to decide with awareness, to live with purpose.</em></p>
+            </div>
+            
+            <div class="offerings-grid">
+                
+                <div class="offering-card">
+                    <div class="offering-img-container">
+                        <img src="resources/a7f0NFz_pSI1-Z92Py14gh" alt="Holistic healing session on a sunlit outdoor terrace">
+                    </div>
+                    <div class="offering-content">
+                        <h3>🌿 Individual Sessions</h3>
+                        <ul class="offering-list">
+                            <li>Integral energetic & emotional healing therapy</li>
+                            <li>Accompaniment with ancestral medicines <em>(according to process & assessment)</em></li>
+                            <li>Intuitive reading & spiritual guidance</li>
+                            <li>Crystal therapy</li>
+                            <li>Deeksha</li>
+                            <li>Meditation</li>
+                            <li>Bach Flower Remedies</li>
+                            <li>Full-body massage</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="offering-card">
+                    <div class="offering-img-container">
+                        <img src="resources/9BXh0CkE4xa7BkFgZJz4YG" alt="Women gathered in a warm, dimly lit room for a ceremony">
+                    </div>
+                    <div class="offering-content">
+                        <h3>🔥 Ceremonies & Experiences</h3>
+                        <ul class="offering-list">
+                            <li>Women's circles</li>
+                            <li>Temazcal — traditional sweat lodge</li>
+                            <li>Cacao circle</li>
+                            <li>Energetic activations & guided meditations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="offering-card">
+                    <div class="offering-img-container">
+                        <img src="resources/8P5E1wsYlEK77CusvYW_6x" alt="Wide view of a holistic healing retreat ritual">
+                    </div>
+                    <div class="offering-content">
+                        <h3>🏔️ Retreats</h3>
+                        <ul class="offering-list">
+                            <li>Organization & facilitation of consciousness-expansion retreats</li>
+                            <li>Immersive experiences in connection with nature</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="offering-card">
+                    <div class="offering-img-container">
+                        <img src="resources/9PeNY5caLPmbXPPIeiJ_Hm" alt="Group of women joining hands in a circle over a candle">
+                    </div>
+                    <div class="offering-content">
+                        <h3>🤝 Group Accompaniment</h3>
+                        <ul class="offering-list">
+                            <li>Team integration through consciousness & purpose</li>
+                            <li>Group facilitation & leadership</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="offering-card offering-card--portrait">
+                    <div class="offering-img-container">
+                        <img src="resources/aMN3Ojo5goi5_K1ZEsm49l" alt="Woman in a tent decorated with tarot cards and crystals">
+                    </div>
+                    <div class="offering-content">
+                        <h3>📖 Training & Development</h3>
+                        <ul class="offering-list">
+                            <li>Workshops on self-knowledge & spirituality — in person & online</li>
+                            <li>Personal integration & development programs</li>
+                            <li>Training in energetic practices & consciousness</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Values / Quote Section (Parallax) -->
+    <section class="values-section" data-alt="Close-up of dried botanical elements and white sage leaves resting on a smooth, pale stone surface. Soft, diffused natural light casting gentle shadows across the minimalist arrangement. The composition is grounding, and earthy, emphasizing organic textures, quiet stillness, and ancient ancestral practices. The color palette incorporates muted sage green, olive, and off-white tones to create a sense of ethereal groundedness and spiritual connection. No text, signage, or lettering." style="background-image: url('resources/9Lwx_ezM2eSe95lkdi8_NW'); background-size: cover; background-position: center; background-attachment: fixed;">
+        <div class="container values-content">
+            <h2 class="font-mystical" style="font-size: 2.8rem; color: var(--color-white); max-width: 900px; margin: 0 auto; line-height: 1.5; font-weight: 300;">“I am earth that holds, fire that transforms, water that cleanses and air that guides… I am here to remember, together with you, that the path has always led inward.”</h2>
+            <p style="margin-top: 3rem; font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase;">— Gabrielle García</p>
+        </div>
+    </section>
+
+    <!-- Moments from the Circle Gallery Section -->
+    <section id="moments" class="section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Moments from the Circle</h2>
+                <p class="section-subtitle"><em>Ceremony, sisterhood and healing — glimpses of the spaces we hold together.</em></p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="resources/9-s865zSat00TEmiSZXkUu" alt="Smiling women sitting in a circle over a lit candle">
+                    <div class="gallery-caption">Oracle & fire</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="resources/aE6XCqTEadWcfjzmbDFOtV" alt="Woman pouring a dark liquid during an indoor ceremony">
+                    <div class="gallery-caption">Cacao ceremony</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="resources/a3QbOIfKL_dccDzNKbP4ks" alt="Two women laughing and enjoying a gathering in a cozy setting">
+                    <div class="gallery-caption">Sisterhood</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="resources/8B0H6fxgeLh5N9lQrXgOnE" alt="Ancestral medicine application ritual in a lush garden">
+                    <div class="gallery-caption">Healing session</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Path & The Practices Section -->
+    <section id="path" class="section bg-sage-light">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">The Path & the Practices</h2>
+                <p class="section-subtitle"><em>Curiosity — and the wish to help more people — led me to study many techniques and therapies.</em></p>
+            </div>
+            
+            <div class="practices-grid">
+                
+                <div class="practice-card">
+                    <h3>Practices & Certifications</h3>
+                    <ul class="offering-list">
+                        <li>Working with the elements</li>
+                        <li>Bach Flower Remedies <em>(certified)</em></li>
+                        <li>Crystal therapy <em>(certified)</em></li>
+                        <li>Deeksha giver <em>(certified)</em></li>
+                        <li>Munay-Ki rites</li>
+                        <li>Shamanism</li>
+                        <li>Oracles</li>
+                        <li>Laughter yoga <em>(certified)</em></li>
+                        <li>Om chanting <em>(facilitator)</em></li>
+                    </ul>
+                </div>
+
+                <div class="practice-card">
+                    <h3>Background</h3>
+                    <ul class="offering-list">
+                        <li>Business Administration studies, Universidad Autónoma de Chihuahua (UACH)</li>
+                        <li>Certified whale-shark swimming guide</li>
+                        <li>Nature interpretation in protected natural areas</li>
+                        <li>Hospitality, restaurants & public relations</li>
+                        <li>Group management & leadership</li>
+                    </ul>
+                    <div class="practice-quote">
+                        <p>“Helping others transform, we transform ourselves — transformation is the work of all, and of each one.”</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- The Unifier Section -->
+    <section class="section">
+        <div class="container text-center" style="max-width: 800px;">
+            <h2 class="section-title">The Unifier</h2>
+            <p style="font-size: 1.15rem; line-height: 2; margin-bottom: 1.5rem;">A <strong>UNIFIER</strong> is a person in service to the planet — contributing, creating and manifesting for the common good.</p>
+            <p style="font-size: 1.15rem; line-height: 2; margin-bottom: 1.5rem;">We are all part of a divine plan that fosters peace, balance and prosperity; one that works with respect and humility, knowing that whoever helps others transform is transformed as well.</p>
+            <p style="font-size: 1.15rem; line-height: 2;"><strong>UNITY</strong> is the fundamental base: when each of us expresses from who we truly are, we reach a state of harmony in which love is a constant among all beings.</p>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="quote-mark">"</div>
+            <p class="testimonial-text">Deep healing and transformative on many dimensions. Thank You ♥</p>
+            <p class="testimonial-author">- Nadim</p>
+        </div>
+    </section>
+
+    <!-- Walk the Path Together (Contact CTA) -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="font-mystical" style="font-size: 3.5rem; margin-bottom: 1rem;">Walk the Path Together</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;"><em>For sessions, ceremonies, retreats or workshops — reach out, and let's light the fire.</em></p>
+            
+            <a href="https://wa.me/529848077454" target="_blank" class="btn-cta btn-cta-alt" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">Message on WhatsApp</a>
+            
+            <p style="margin-top: 5rem; font-style: italic; font-size: 1.2rem; opacity: 0.8; letter-spacing: 2px; text-transform: uppercase;">“The path has always led inward.”</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <a href="#home" class="footer-logo">Gabrielle García</a>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">Curandera · Mujer de camino y de fuego</p>
+            <p style="margin-top: 2rem; font-size: 0.9rem; color: var(--color-sage);">© Gabrielle García</p>
+        </div>
+    </footer>
+
+</body>
+</html>
