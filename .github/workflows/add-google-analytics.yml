@@ -1,0 +1,26 @@
+name: Add Google Analytics
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/add-google-analytics.yml
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Insert Google tag into site head
+        shell: python
+        run: |
+          from pathlib import Path
+
+          path = Path("index.html")
+         
